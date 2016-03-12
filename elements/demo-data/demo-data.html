@@ -1,0 +1,16 @@
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+
+<dom-module id="demo-data">
+	<template>
+		<style>
+			:host {
+				display: hidden;
+			}
+		</style>
+
+		<iron-ajax id="caller" url="../../MOCK_DATA.json" handle-as="json" on-response="handleResponse"></iron-ajax>
+	</template>
+
+	<script src="demo-data.js"></script>
+</dom-module>

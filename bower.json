@@ -1,0 +1,31 @@
+{
+  "name": "demo",
+  "authors": [
+    "Skmsoumya <soumyakishormishra@gmail.com>"
+  ],
+  "description": "HU HU",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-pages": "PolymerElements/iron-pages#^1.0.7",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#^1.0.8",
+    "paper-header-panel": "PolymerElements/paper-header-panel#^1.1.4",
+    "paper-toolbar": "PolymerElements/paper-toolbar#^1.1.4",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.0.7",
+    "iron-icons": "PolymerElements/iron-icons#^1.1.3",
+    "paper-listbox": "polymerelements/paper-listbox#^1.1.2",
+    "paper-item": "polymerelements/paper-item#^1.1.4",
+    "paper-material": "PolymerElements/paper-material#^1.0.6",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.2.0"
+  }
+}
