@@ -2,7 +2,7 @@
 A demo polymer app.
 
 
-**How to use**
+*****How to use*****
 To use the app you need to have: 
 1. Node & NPM
 2. Bower
