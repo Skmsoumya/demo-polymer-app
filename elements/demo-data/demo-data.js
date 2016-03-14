@@ -1,12 +1,18 @@
 Polymer({
 	is: "demo-data",
+	properties: {
+		data: {
+			type: Array,
+			notify: true
+		}
+	},
 
 	ready: function() {
 		this.getData();
 	},
 
 	handleResponse: function(event) {
-		console.log(event.detail.response);
+		this.data = event.detail.response;
 	},
 
 	getData: function() {

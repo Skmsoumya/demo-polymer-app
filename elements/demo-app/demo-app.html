@@ -1,4 +1,3 @@
-
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-drawer-panel/paper-drawer-panel.html">
 <link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
@@ -8,42 +7,49 @@
 <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../demo-offer-page/demo-offer-page.html">
 
 <link rel="import" href="../home-page/home-page.html">
 <link rel="import" href="../demo-data/demo-data.html">
 
 <link rel="import" href="../../css/shared-styles.html">
 
+
 <dom-module id="demo-app">
 	<template>
-		<style include="shared-styles">
-		</style>
+	
+		<style include="shared-styles"></style>
 		<paper-drawer-panel class="custom-color fullbleed layout vertical">
 			<paper-header-panel drawer>
 			    <paper-toolbar id="drawer-header" class="tall">
-			    	<paper-icon-button icon="close" paper-drawer-toggle></paper-icon-button>
+			    	<paper-icon-button icon="close" style="color: red;" paper-drawer-toggle></paper-icon-button>
 			    </paper-toolbar>
-			    <listbox>
-			    	<paper-item>Home</paper-item>
-			    	<paper-item>About</paper-item>
-			    	<paper-item>Contact</paper-item>
-			    </listbox>
+			    <paper-menu selected="{{ pageNo }}">
+			    	<paper-item class="app-menu-icon">Home</paper-item>
+			    	<paper-item class="app-menu-icon">About</paper-item>
+			    	<paper-item class="app-menu-icon">Contact</paper-item>
+			    </paper-menu>
 			</paper-header-panel>
 			<paper-header-panel main>
 			    <paper-toolbar>
 			    	<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-			    	<paper-icon-button icon="arrow-back"></paper-icon-button>
-			    	<div class="title">Demo Name</div>
+			    	<paper-icon-button id="backButton" icon="arrow-back" on-tap="goToHomePage"></paper-icon-button>
+			    	<div class="title">{{pageName}}</div>
 			    </paper-toolbar>
-			    <iron-pages selected="0">
-			    	<home-page></home-page>
+			    <iron-pages selected="{{ pageNo }}">
+			    	<home-page resources="{{ resources }}" openpageindex="{{ pageNo }}"></home-page>
 			    	<div>About Page</div>
 			    	<div>Contact Page</div>
+
+			    	<template is="dom-repeat" items="{{ resources }}" as="offer">
+			    		<demo-offer-page title="{{ offer.title }}" backimage="{{ offer.heroImg }}" description="{{offer.description}}" ></demo-offer-page>
+			    	</template>
 			    </iron-pages>
 			</paper-header-panel>
 		</paper-drawer-panel>
 
-		<demo-data></demo-data>
+		<demo-data data="{{ resources }}"></demo-data>
 	</template>
 
 	<script src="demo-app.js"></script>

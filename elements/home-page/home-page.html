@@ -1,14 +1,19 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../demo-card/demo-card.html">
 <link rel="import" href="../../css/shared-styles.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
 
 <dom-module id="home-page">
 	<template>
 		<style include="shared-styles"></style>
-		<div id="cards-holder">
-			<demo-card></demo-card>
-		</div>
+		<style include="iron-flex iron-flex-alignment"></style>
 
+		<div id="cards-holder" class="horizontal layout wrap">
+			<template is="dom-repeat" items="{{ resources }}" as="resourceItem">
+				<demo-card offerpageindex="{{ index }}" pageno="{{ openpageindex }}" productimage="{{ resourceItem.heroImg }}" id="{{ resourceItem.id }}" title="{{ resourceItem.title }}" link="{{ resourceItem.link }}" description="{{{ resourceItem.description }}"></demo-card>
+			</template>
+		</div>
 	</template>
 
 	<script src="home-page.js"></script>

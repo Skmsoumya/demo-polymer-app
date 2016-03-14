@@ -1,11 +1,22 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../css/shared-styles.html">
 
 <dom-module id="demo-card">
 	<template>
-		<paper-material>
-			<div>HEADING</div>
-			<div>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</div>
+		<style include="iron-flex iron-flex-alignment iron-flex-factors"></style>
+		<style include="shared-styles"></style>
+
+		<paper-material on-tap="openOfferPage" class="cards layout horizontal" elevation="2">
+				<div class="card-image" style$="background: url({{ productimage }}) #cccccc no-repeat center center; background-size:cover;"></div>
+				<div class="flex-9">
+					<div class="flex layout horizontal">
+						<div class="card-number">{{ id }}.</div>
+						<div class="card-name">{{ title }}</div>
+					</div>
+					<div class="card-description">{{ description }}</div>
+				</div>
 		</paper-material>
 	</template>
 
