@@ -5,18 +5,18 @@ A demo polymer app.
 #Dependencies
 To use the app you need to have the following installed:
 
-1. ###Node & NPM:
+1.Node & NPM:
 
-...Install it form http://www.nodejs.org
+   Install it form http://www.nodejs.org
 
 
-2. Bower:
+2.Bower:
 
-...Install it by after installing nodejs by running npm install bower -g
+   Install it by after installing nodejs by running npm install bower -g
 
-3. Any simple HTTP server:
+3.Any simple HTTP server:
 
-...I was using pythons SimpleHTTPServer to serve my files. If you do not have python installed in your system please use any other HTTP server that you are familiar with to serve all the files in the projects directory. You can use WAMPServer, XAMPserver or get hacky and create your own server using nodejs. 
+   I was using pythons SimpleHTTPServer to serve my files. If you do not have python installed in your system please use any other HTTP server that you are familiar with to serve all the files in the projects directory. You can use WAMPServer, XAMPserver or get hacky and create your own server using nodejs. 
 
 # How to run the app
 
